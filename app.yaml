@@ -1,0 +1,10 @@
+runtime: python311  # Or check supported versions with: `gcloud app runtimes list`
+env: standard       # <-- This is the key change!
+entrypoint: gunicorn -b :$PORT api:app --timeout 300
+
+env_variables:
+  DB_HOST: trendanalysis-457309:europe-southwest1:trend-analysis-db  # Use Cloud SQL connection name for production
+  DB_USER: root
+  DB_PASS: Impala69!
+  DB_NAME: trend-analysis-db
+

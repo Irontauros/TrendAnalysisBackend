@@ -11,7 +11,7 @@ load_dotenv()
 
 # Get database configuration from environment variables
 db_config = {
-    'host': '34.175.68.152',
+    'host': '34.175.36.122',
     'user': 'root',
     'password': 'Impala69!',
     'database': 'trend-analysis-db'
@@ -24,7 +24,7 @@ def main():
 
     # Stage 1: Fetch and store articles
     print("\n--- Stage 1: Fetching and storing articles ---")
-    fetch_and_store_articles(db_config)
+    #fetch_and_store_articles(db_config)
 
     # Stage 2: Enrich articles with AI tags and update totals
     print("\n--- Stage 2: Enriching articles and saving totals ---")
@@ -32,7 +32,7 @@ def main():
 
     # Stage 3: Run prediction pipeline
     print("\n--- Stage 3: Running predictions for future data ---")
-   #run_prediction_pipeline(db_config)
+    run_prediction_pipeline(db_config)
 
     print("\n✅ All stages complete!")
 
